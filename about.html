@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokkanisseri Kannangatt Bhagavathi Kshethram</title>
+    <link href='https://fonts.googleapis.com/css?family=Anek Malayalam' rel='stylesheet'>
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Anek Malayalam', sans-serif;
+            font-size: 22px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #1a0b0b;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* 🔥 Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+            border-bottom: 2px solid rgba(255, 69, 0, 0.6);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+            text-shadow: 0px 0px 8px rgba(255, 165, 0, 1);
+        }
+
+        /* 🔥 Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            padding-left: 10%;
+            background: url('assets/IMG_7451.jpg') no-repeat center center/cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 40%;
+        }
+      
+
+
+
+
+        .hero h1 {
+            font-size: 3em;
+            text-shadow: 3px 3px 10px red, 0px 0px 15px orange;
+            animation: flameGlow 2s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: rgb(255, 34, 34);
+            color: white;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+            box-shadow: 0 0 5px rgb(255, 0, 0),
+            0 0 25px rgb(255, 0, 0),0 0 50px rgb(255, 0, 0),
+            0 0 100px rgb(255, 0, 0);
+        }
+        /* 🔥 About Section */
+#about {
+    background: #300505;
+    display: flex;
+    justify-content: space-between; /* Creates space between text and image */
+    align-items: center;
+    height: 100vh;
+    padding: 80px 10%;
+}
+
+/* 🔥 Box for Text (Aligned Left) */
+.about-box {
+    background: rgba(255, 69, 0, 0.15);
+    padding: 40px;
+    max-width: 45%; /* Takes 45% of the left side */
+    text-align: left; /* Aligns text and heading to the left */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.5);
+    border-left: 5px solid #ff4500;
+}
+
+/* 🔥 Heading Style */
+.about-box h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-shadow: 2px 2px 5px red;
+}
+
+/* 🔥 Image on the Right (Full Height, Margin-to-Margin) */
+.about-image {
+    width: 50%; /* Takes 50% of the section width */
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom; /* Ensures it fills the space properly */
+    border-radius: 10px;
+}
+#info {
+    background: url('assets/IMG_7403.jpg') no-repeat center center/cover; /* Dark background for readability */
+    padding: 80px 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-container {
+    max-width: 800px; /* Limits paragraph width */
+    background: rgba(255, 255, 255, 0.1); /* Slight white transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.6);
+    backdrop-filter: blur(10px); /* 🔥 Adds blur effect */
+}
+
+.info-container h1 {
+    font-size: 2.5em;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 69, 0, 1);
+    margin-bottom: 20px;
+}
+
+.info-container p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#pay-perumal {
+    background: url('payyannur ambalam.jpg') no-repeat center center/cover; /* Dark background for readability */
+    backdrop-filter: blur(5px); /* 🔥 Adds blur effect */
+    padding: 80px 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pay-perumal::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('payyannur ambalam.jpg') no-repeat center center/cover;
+    filter: blur(2px); /* Blurs the background */
+    z-index: -1;
+}
+/* Bandham Section */
+.bandham {
+    max-width: 800px; /* Limits paragraph width */
+    background: rgba(255, 255, 255, 0.1); /* Slight white transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px); /* 🔥 Adds blur effect */
+}
+.bandham h1 {
+    font-size: 2.5em;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 69, 0, 1);
+    margin-bottom: 20px;
+}
+
+.bandham p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 15px;
+}
+/* Centering the Location Section */
+#theyyams {
+    position: relative; /* Needed for absolute positioning of ::before */
+    display: flex;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    width: 100%;
+    min-height: 100vh; /* Ensures it takes the full screen height */
+    padding: 50px 20px;
+    overflow: hidden; /* Prevents unwanted overflow */
+}
+
+#theyyams::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/IMG_7451.jpg') no-repeat center center/cover;
+    filter: blur(2px); /* Blurs the background */
+    z-index: -1; /* Places it behind the content */
+}
+
+.theyyam-container {
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(34, 34, 34, 0.8); /* Transparent dark background */
+    border-radius: 10px;
+    color: white;
+    border: 2px solid #ffdd44;
+    box-shadow: 0 0 15px #ff4500;
+    backdrop-filter: blur(5px); /* Adds blur effect */
+    animation: flameGlow 2s infinite alternate; /* Adds flame glow effect */
+}
+.theyyam-container h1 {
+    font-size: 2.5em;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 69, 0, 1);
+    margin-bottom: 20px;
+}
+
+.theyyam-container p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 15px;
+}
+/* Centering the Google Map */
+
+/* Explore Button Styling */
+.explore-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #d32f2f;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.explore-btn:hover {
+    background: #b71c1c;
+}
+
+
+    
+
+         /* 🔥 Location & Contact Section */
+        /* Centering the Location Section */
+        #contact {
+            position: relative; /* Needed for absolute positioning of ::before */
+    display: flex;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    width: 100%;
+    min-height: 100vh; /* Ensures it takes the full screen height */
+    padding: 50px 20px;
+    overflow: hidden; 
+        }
+        #contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/IMG_7390.jpg') no-repeat center center/cover;
+    filter: blur(2px); /* Blurs the background */
+    z-index: -1; /* Places it behind the content */
+}
+
+        /* 🔥 Box Container */
+        .box {
+            background: rgba(34, 34, 34, 0.8); /* Transparent dark background */
+    border-radius: 10px;
+    color: white;
+    border: 2px solid #ffdd44;
+    box-shadow: 0 0 15px #ff4500;
+    backdrop-filter: blur(5px); /* Adds blur effect */
+    animation: flameGlow 2s infinite alternate;
+           
+            padding: 20px;
+           
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .box h1 {
+    font-size: 1.5em;
+    color: #ffcc00;
+    text-shadow: 0px 0px 10px rgba(255, 69, 0, 1);
+    margin-bottom: 10px;
+}
+
+        /* 🔥 Google Map Styling */
+        .map-wrapper iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        /* 🔥 Floating Contact Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgb(255, 50, 50);
+            color: rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            text-decoration: none;
+            box-shadow: 0px 0px 10px rgba(255, 8, 0, 0.993);
+            transition: 0.3s;
+        }
+
+        .floating-btn:hover {
+            background: darkred;
+        }
+         /* 🔥 Popup Contact Section */
+         .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-box {
+            background: rgba(255, 69, 0, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px orange;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* 🔥 Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: yellow;
+        }
+        footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+    .footer-container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    
+        .embers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: orange;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatEmber linear infinite;
+        }
+
+        @keyframes floatEmber {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 🔥 Navigation Bar -->
+<nav>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#theyyams">Theyyams</a>
+        <a href="#contact">Location</a>
+    </div>
+</nav>
+
+<!-- 🔥 Hero Section -->
+<div class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>കൊക്കാനിശ്ശേരി ശ്രീ കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം</h1>
+        <p>കൊക്കാനിശ്ശേരി, പയ്യന്നൂര്‍, 670307</p>
+        <a href="#about" class="explore-btn">Explore</a>
+    </div>
+    
+</div>
+
+<!-- 📜 About -->
+<section id="about">
+    <div class="about-box">
+    <h1>കൊക്കാനിശ്ശേരി കണ്ണങ്ങാട്ട്</h1>
+    <p>പരിപാവനമായ പയ്യന്നൂർ ശ്രി സുബ്രഹ്മണ്യ സ്വാമിയുടെ ഊരിൽ പയ്യ്നൂർ പട്ടണത്തിന്റെ ഹൃദയ ഭാഗത്ത് കൊക്കാനിശ്ശേരിയിൽ സ്ഥിതി ചെയ്യുന്ന യാദവരുടെ (മണിയാണി) കുലദേവതയായ ശ്രീ കണ്ണങ്ങാട്ട് ഭഗവതി കുടികൊള്ളുന്ന മൂന്നാമത്തെ കണ്ണങ്ങാട്ടാണ് കൊക്കാനിശ്ശേരി ശ്രീ കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം</p>
+</div>
+<img src="assets/IMG_7379.jpg" alt="Theyyam Image" class="about-image">
+</section>
+<section id="info">
+    <div class="info-container">
+        <h1>ഐതിഹ്യം</h1>
+        <p>ശ്രീ വയത്തൂർ കാലിയാർ ഈശ്വരന്റെ ആജ്ഞ അനുസരിച്ച് ദുഷ്ടരെ വധിച്ചും ശിഷ്ടരെ പരിപാലിക്കുന്നതിനും വേണ്ടി ഭൂമി പാതാളം വഴി ഓരിച്ചേരി കല്ലിൽ എത്തിയ ദേവി അവിടെ നിന്നും നൂലിട്ടാൽ നിലകിട്ടാത്ത ആഴമുള്ള സമുദ്രം കാൽനടയായി കടന്ന് ഉദിനൂർ കൂലോത്ത് എത്തി എന്നും ഉദിനൂർ കൂലോത്ത് തൊഴാനായി എത്തിയ കൂത്തൂർ മണിയാണിയുടെ കെട്ടുംമട്ടും ചുറ്റും നെറിയും കുറിയും അടക്കവും ആചാരവും ഭക്തിയും വിശ്വാസവും കണ്ട് ബോധിച്ച ദേവി ക്ഷേത്രപാലകന്റെ അനുവാദത്തോടുകൂടി കൂത്തൂർ മണിയാണിയുടെ വെള്ളോലക്കുടയിൽ ആവേശിച്ചു എന്നും ഉദിനൂർ കൂലോത്തുനിന്നും തിരികെ എത്തിയ കൂത്തൂർ മണിയാണി തന്റെ വസതിയിൽ സ്വസ്ഥാനത്ത് കുടവെച്ചെങ്കിലും അത് ഇളകിത്തുടങ്ങുന്നതായി കണ്ടു എന്നും അത്ഭുത പരതന്ത്രനായ ആ ഭക്തൻ പ്രശ്‌നചിന്ത നടത്തിയതിൽ നിന്നും കണ്ണങ്ങാട്ട് ഭഗവതിയുടെ സാന്നിധ്യം മനസ്സിലാക്കി തൻ്റെ കന്നിക്കൊട്ടിലിൽ ദേവിയെ കുടിയിരുത്തി എന്നും പയ്യന്നൂർ പെരുമാളെ ചെന്ന് വന്ദിച്ചതുപ്രകാരം ആറുകിരിയത്തുള്ളവരെയുംകൂട്ടി ക്ഷേത്രം പണിത് പ്രതിഷ്ഠ ചെയ്തത് പ്രകാരം കൊറ്റിയിൽ ശ്രീ ആദി കണ്ണങ്ങാട് കുടികൊണ്ടുവെന്നും പയ്യന്നൂർ പെരുമാളോട് പെരുമാളുടെ കൺവെട്ടത്ത് തനിക്കിരിക്കുവാൻ ഒരുസ്ഥാനം വേണമെന്ന് അറിയിച്ചതുപ്രകാരം പയ്യന്നൂർ പെരുമാൾ തന്റെ പൊന്നിൻ തൃശൂലംകൊണ്ട് വരച്ചുകാട്ടിക്കൊടുത്ത സ്ഥലത്ത് ചമച്ച സ്ഥാനമാണ് ശ്രീ കൊക്കാനിശ്ശേരി കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം എന്നും ഐതിഹ്യം
+</p>
+        
+    </div>
+</section>
+<section id="pay-perumal">
+    <div class="bandham">
+        <h1>പയ്യന്നൂർ പെരുമാളും ആയുള്ള ബന്ധം</h1>
+        <p>
+            കൊക്കാനിശ്ശേരി ശ്രീ കണ്ണങ്ങാട്ടു ഭഗവതിക്കും പയ്യന്നൂർ പെരുമാളുമായി വളരെ അടുത്ത ബന്ധമാണുള്ളത്. എല്ലാ ദിവസവും മൂന്നേമുക്കാൽ നാഴികനേരം പെരുമാളുടെ സാന്നിധ്യം ഈ ക്ഷേത്രത്തിൽ ഉണ്ടെന്നാണ് സങ്കൽപ്പം. ഇന്നും കൊക്കാനിശ്ശരി കണ്ണങ്ങാട്ട് ക്ഷേത്രത്തിന്റെ കിഴക്കെ പടിപ്പുരയുടെ നാലുതൂണുകളിൽ ഒന്ന് മരത്തിൻ്റെതായി നിലനിർത്തി ദീപംവെച്ച് ആരാധിച്ച് വരുന്നത് ഈ സങ്കൽപത്തിന്റെ ഭാഗമായിട്ടാണ്. കൂടാതെ പയ്യന്നൂർ പെരുമാളുടെ ആരാധനാ മഹോത്സവം കഴിഞ്ഞ ഉടനെ വ്യശ്ചികം 21-ാം തീയ്യതിയാണ് കൊക്കാനിശ്ശേരി കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രത്തിൽ കളിയാട്ടം ആരംഭിക്കുന്നത്.
+
+        </p>
+    </div>
+</section>
+
+
+
+<!-- 🔥 Theyyams Section (Opens a New Page) -->
+<section id="theyyams">
+    <div class="theyyam-container">
+        <h1>ദേവി ദേവന്മാർ</h1>
+        <p>കണ്ണനെ കാട്ടിയ ഭഗവതി വാണരുളും കൊക്കാനിശ്ശേരിയുടെ പരിപാവന ഭൂമിയിൽ മഞ്ഞൾ കുറി അനുഗ്രഹം നൽകി ഭക്തരെ പരിപാലിക്കുന്ന ദേവി ദേവന്മാരെ കുറിച് അറിയുവാൻ:
+        </p>
+        <a href="theyyams.html" class="explore-btn">Explore</a>
+    </div>
+</section>
+
+</section>
+
+<section id="contact">
+    <!-- 🔥 Temple Location -->
+    <div class="box">
+        <h1>സ്ഥലം</h1>
+        <p>പയ്യന്നൂർ പെരുമാൾ തൻ പൊന്നിൻ ശൂലത്താൽ ചമച്ച ദേവഭൂമി ഇന്ന് സ്ഥിതി ചെയ്യുന്ന സ്ഥലം </p>
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1767.069387682326!2d75.21361326320611!3d12.109435830981514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba46c39c2ec6287%3A0xcf5beea33e8fb3c1!2sKokkanisseri%20Kannangattu%20Bhagavathi%20temple!5e0!3m2!1sen!2sin!4v1743322089515!5m2!1sen!2sin" 
+                allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
+            </iframe> 
+        </div>
+    </div>
+
+<!-- 🔥 Floating Button -->
+<button class="floating-btn" onclick="openPopup()">☏</button>
+<!-- 🔥 Contact Popup -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <button class="close-btn" onclick="closePopup()">✖</button>
+        <h2>കൂടുതൽ വിവരങ്ങൾക്കായി:
+        </h2>
+        <p>Phone: <a href="tel:+919605449546" style="color: rgb(0, 0, 0); text-decoration: underline;">+91 96054 49546</a></p>
+    </div>
+</div>
+</section>
+<footer>
+    <div class="footer-container">
+        <p>© Kokkanisseri Kannangatt Bhagavathi Kshetram, Payyanur | All Rights Reserved</p>
+        
+    </div>
+</footer>
+<div class="embers"></div>
+<script>
+    let lastScrollTop = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down - hide navbar
+            nav.style.transform = "translateY(-100%)";
+        } else {
+            // Scrolling up - show navbar
+            nav.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollTop;
+    });
+    const emberContainer = document.querySelector('.embers');
+    function createEmber() {
+        const ember = document.createElement('div');
+        ember.classList.add('ember');
+        ember.style.left = `${Math.random() * 100}vw`;
+        ember.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        emberContainer.appendChild(ember);
+        setTimeout(() => { ember.remove(); }, 5000);
+    }
+    setInterval(createEmber, 300);
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+    function openPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Close the popup if clicked outside the box
+        document.getElementById("popup").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closePopup();
+            }
+        });
+</script>
+
+</body>
+</html>

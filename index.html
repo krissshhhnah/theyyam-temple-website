@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theyyam Museum</title>
+    <link href='https://fonts.googleapis.com/css?family=Anek Malayalam' rel='stylesheet'>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Anek Malayalam';font-size: 22px; scroll-behavior: smooth; }
+        body { background: #1a0b0b; color: white; text-align: center; overflow-x: hidden; }
+
+        /* 🔥 Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* Centering the nav items */
+            padding: 20px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 69, 0, 0.6);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px; /* Adds spacing between links */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+            text-shadow: 0px 0px 8px rgba(255, 165, 0, 1);
+        }
+
+        /* 🔥 Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            color: white;
+            background: url('assets/IMG20241210174116 (2).jpg') no-repeat center center/cover;
+        }
+        /* 🔥 Hero Section - Align Text to Left */
+.hero-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-40%);
+    text-align: left;
+    max-width: 40%;
+}
+
+/* 🔥 Overlayed Image on the Right */
+.hero-image {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    transform: translateY(-50%);
+    width: 300px; /* Adjust size */
+    height: auto;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 69, 0, 0.6);
+}
+
+/* Hover Effect - Enlarge & Float */
+.hero-image:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0px 0px 20px rgba(255, 140, 0, 0.8);
+}
+
+
+        /* Lightened the black overlay */
+        .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px); /* Adjust the blur intensity as needed */
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.1); /* Slight tint to enhance readability */
+}
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 80%;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            align-items: left;
+            text-shadow: 3px 3px 10px red, 0px 0px 15px orange;
+            animation: flameGlow 2s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        /* 🔥 Fire Text Animation */
+        @keyframes flameGlow {
+            0% { text-shadow: 3px 3px 10px red, 0px 0px 15px orange; }
+            100% { text-shadow: 5px 5px 20px yellow, 0px 0px 25px red; }
+        }
+
+        /* 📜 Sections */
+        section {
+            height: 100vh;
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #about { background: #300505; }
+        #gallery { background: #5a0e0e; }
+        #events { background: #7d1717; }
+        #contact { background: #9e2121; }
+        #location {
+    background: #5a0e0e;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 165, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+        /* 🔥 Floating Embers */
+        .embers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: orange;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: floatEmber linear infinite;
+        }
+
+        @keyframes floatEmber {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    
+
+<!-- 🔥 Navigation Bar -->
+<nav>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- 🔥 Hero Section -->
+<div class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>കൊക്കാനിശ്ശേരി ശ്രീ കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം</h1>
+        <p>കൊക്കാനിശ്ശേരി, പയ്യന്നൂര്‍, 670307</p>
+        <!-- 🔥 Floating Image on the Right -->
+    <img src="D:/Web Tech Classroom/WebTech Assignment/assets/IMG_7441.jpg" alt="Temple Image" class="hero-image">
+    </div>
+</div>
+
+<!-- 📜 Sections -->
+<section id="about">
+    <h1>About Theyyam</h1>
+    <p>Theyyam is a traditional ritual art form from Kerala...</p>
+</section>
+
+<section id="location">
+    <h1>Temple Location</h1>
+    <p>Here is the exact location of കൊക്കാനിശ്ശേരി ശ്രീ കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം.</p>
+    
+    <!-- 🔥 Embedded Google Map -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1767.069387682326!2d75.21361326320611!3d12.109435830981514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba46c39c2ec6287%3A0xcf5beea33e8fb3c1!2sKokkanisseri%20Kannangattu%20Bhagavathi%20temple!5e0!3m2!1sen!2sin!4v1743322089515!5m2!1sen!2sin" 
+        width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        
+    </div>
+</section>
+
+
+<section id="gallery">
+    <h1>Gallery</h1>
+    <p>Experience the vibrant colors of Theyyam...</p>
+</section>
+
+<section id="events">
+    <h1>Upcoming Events</h1>
+    <p>Stay updated with Theyyam performances...</p>
+</section>
+
+<section id="contact">
+    <h1>Contact Us</h1>
+    <p>Reach out for more information...</p>
+</section>
+
+<!-- 🔥 Floating Embers -->
+<div class="embers"></div>
+
+<script>
+    // 🔥 Generate Floating Ember Particles
+    const emberContainer = document.querySelector('.embers');
+    function createEmber() {
+        const ember = document.createElement('div');
+        ember.classList.add('ember');
+        ember.style.left = `${Math.random() * 100}vw`;
+        ember.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        emberContainer.appendChild(ember);
+        setTimeout(() => { ember.remove(); }, 5000);
+    }
+    setInterval(createEmber, 300);
+</script>
+
+</body>
+</html>

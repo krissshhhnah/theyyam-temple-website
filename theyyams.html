@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokkanisseri Kannangatt Bhagavathi Kshethram</title>
+    <link href='https://fonts.googleapis.com/css?family=Anek Malayalam' rel='stylesheet'>
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Anek Malayalam', sans-serif;
+            font-size: 22px;
+            scroll-behavior: smooth;
+        }
+
+        /* Full-Screen Background */
+        #theyyams {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+            background: url('assets/IMG_7440.jpg') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Blurred Overlay */
+        #theyyams::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Content Box */
+        .theyyam-container {
+            position: relative;
+            max-width: 900px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            border: 2px solid #ffdd44;
+            box-shadow: 0 0 15px #ff4500;
+            backdrop-filter: blur(5px);
+            color: white;
+        }
+
+        /* Title */
+        .theyyam-container h1 {
+            font-size: 2.5em;
+            color: #ffcc00;
+            text-shadow: 0px 0px 10px rgba(255, 69, 0, 1);
+            margin-bottom: 20px;
+        }
+
+        /* Description */
+        .theyyam-container p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Carousel Wrapper */
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        /* Infinite Slider */
+        .carousel-slider {
+            display: flex;
+            gap: 15px;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
+            width: calc(200px * 16); /* Adjust based on number of images */
+        }
+
+        /* Each Theyyam Box */
+        .theyyam-box {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .theyyam-box:hover {
+            transform: scale(1.1);
+        }
+
+        /* Theyyam Image */
+        .theyyam-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Overlay with Name & Button */
+        .theyyam-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Show Overlay on Hover */
+        .theyyam-box:hover .theyyam-overlay {
+            opacity: 1;
+        }
+
+        /* Know More Button */
+        .know-more {
+            margin-top: 10px;
+            background: #ff4500;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .know-more:hover {
+            background: #ffdd44;
+            color: black;
+        }
+
+        /* Infinite Scrolling Keyframes */
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        /* Back Button - Same Style as "Know More" */
+/* Back Button - Same Style as "Know More" */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #ff4500;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 22px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid #ffdd44;
+    box-shadow: 0 0 10px #ff4500;
+}
+
+.back-button:hover {
+    background: #ffdd44;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+
+    <section id="theyyams">
+        <div class="theyyam-container">
+            <h1>തെയ്യങ്ങൾ
+            </h1>
+            <p>കൊക്കാനിശ്ശേരി ശ്രി കണ്ണങ്ങാട്ട് ഭഗവതി ക്ഷേത്രം കളിയാട്ടത്തിൽ കെട്ടിയാടുന്ന ദേവി ദേവന്മാർ
+            </p>
+
+            <div class="carousel-container">
+                <div class="carousel-slider">
+                    <!-- Original Images -->
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7432.jpg" alt="Theyyam 1">
+                        <div class="theyyam-overlay">
+                            <a href="kannangatt-bhagavathi.html" class="know-more">കണ്ണങ്ങാട്ട് ഭഗവതി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241209114601.jpg" alt="Theyyam 2">
+                        <div class="theyyam-overlay">
+                            <a href="kuvalamthatt-bhagavathi.html" class="know-more">കൂവളന്താട്ട് ഭഗവതി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/adhithyan.vt-___3356958353158368841_39934323762___-.jpg" alt="Theyyam 3">
+                        <div class="theyyam-overlay">
+                            <a href="puliyoor-kannan.html" class="know-more">പുലിയൂര് കണ്ണൻ</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7275.jpg" alt="Theyyam 4">
+                        <div class="theyyam-overlay">
+                            <a href="puthiya-bhagavathi.html" class="know-more">പുതിയ ഭഗവതി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7215.jpg" alt="Theyyam 5">
+                        <div class="theyyam-overlay">
+                            <a href="kundora-chamundi.html" class="know-more">കുണ്ടോറ ചാമുണ്ടി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241208134519.jpg" alt="Theyyam 6">
+                        <div class="theyyam-overlay">
+                            <a href="madayil-chamundi.html" class="know-more">മടയിൽ ചാമുണ്ടി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241209100615_01.jpg" alt="Theyyam 7">
+                        <div class="theyyam-overlay">
+                            <a href="raktha-chamundi.html" class="know-more">രക്ത ചാമുണ്ഡി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241229115631.jpg" alt="Theyyam 8">
+                        <div class="theyyam-overlay">
+                            <a href="vishnumoorthi.html" class="know-more">വിഷ്ണുമൂർത്തി</a>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7432.jpg" alt="Theyyam 1">
+                        <div class="theyyam-overlay">
+                            <a href="kannangatt-bhagavathi.html" class="know-more">കണ്ണങ്ങാട്ട് ഭഗവതി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241209114601.jpg" alt="Theyyam 2">
+                        <div class="theyyam-overlay">
+                            <a href="kuvalamthatt-bhagavathi.html" class="know-more">കൂവളന്താട്ട് ഭഗവതി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/adhithyan.vt-___3356958353158368841_39934323762___-.jpg" alt="Theyyam 3">
+                        <div class="theyyam-overlay">
+                            <a href="puliyoor-kannan.html" class="know-more">പുലിയൂര് കണ്ണൻ</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7275.jpg" alt="Theyyam 4">
+                        <div class="theyyam-overlay">
+                            <a href="puthiya-bhagavathi.html" class="know-more">പുതിയ ഭഗവതി</a>
+                        </div>
+                    </div>
+               
+
+                    <div class="theyyam-box">
+                        <img src="assets/IMG_7215.jpg" alt="Theyyam 5">
+                        <div class="theyyam-overlay">
+                            <a href="kundora-chamundi.html" class="know-more">കുണ്ടോറ ചാമുണ്ടി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241208134519.jpg" alt="Theyyam 6">
+                        <div class="theyyam-overlay">
+                            <a href="madayil-chamundi.html" class="know-more">മടയിൽ ചാമുണ്ടി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241209100615_01.jpg" alt="Theyyam 7">
+                        <div class="theyyam-overlay">
+                            <a href="raktha-chamundi.html" class="know-more">രക്ത ചാമുണ്ഡി</a>
+                        </div>
+                    </div>
+                    <div class="theyyam-box">
+                        <img src="assets/IMG20241229115631.jpg" alt="Theyyam 8">
+                        <div class="theyyam-overlay">
+                            <a href="vishnumoorthi.html" class="know-more">വിഷ്ണുമൂർത്തി</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <!-- Back Button -->
+<a href="about.html#theyyams" class="know-more back-button">Back</a>
+
+    </section>
+
+</body>
+</html>
